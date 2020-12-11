@@ -47,11 +47,12 @@
                                         </textView>
                                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8z-ea-EDR">
                                             <rect key="frame" x="378" y="20" width="30" height="30"/>
-                                            <state key="normal" title="Button">
+                                            <state key="normal">
                                                 <imageReference key="image" image="square.and.pencil" catalog="system" symbolScale="large"/>
                                             </state>
                                             <connections>
-                                                <segue destination="Dz7-Bk-lfY" kind="show" id="6yf-GV-yJq"/>
+                                                <action selector="editToDoClick:" destination="emt-iy-cBB" eventType="touchUpInside" id="xB3-5B-2kK"/>
+                                                <segue destination="Dz7-Bk-lfY" kind="show" identifier="rowPosition" id="JZP-B7-SBx"/>
                                             </connections>
                                         </button>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="fill" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pvg-t1-bCP">
@@ -60,6 +61,9 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="49" id="Yh9-M9-vbh"/>
                                             </constraints>
+                                            <connections>
+                                                <action selector="todoSwitchClick:" destination="emt-iy-cBB" eventType="valueChanged" id="Nqw-bV-N9Y"/>
+                                            </connections>
                                         </switch>
                                     </subviews>
                                     <constraints>
@@ -80,9 +84,9 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="toDoItemDueText" destination="ZmB-g2-xLh" id="AaC-Xe-oZ8"/>
-                                    <outlet property="toDoItemEditImageButton" destination="C8z-ea-EDR" id="atN-Ux-wNF"/>
-                                    <outlet property="toDoItemSwitchState" destination="pvg-t1-bCP" id="B6V-KB-hS7"/>
+                                    <outlet property="toDoItemSwitchState" destination="pvg-t1-bCP" id="Hxu-Qa-B12"/>
                                     <outlet property="toDoItemTitleText" destination="Wlc-gs-KbI" id="75G-Bf-8Br"/>
+                                    <outlet property="todoEdit" destination="C8z-ea-EDR" id="QJE-j2-tDh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -91,16 +95,22 @@
                             <outlet property="delegate" destination="emt-iy-cBB" id="B8S-Sa-edr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="To Do List Items" id="lff-8i-xKi"/>
+                    <navigationItem key="navigationItem" title="To Do List Items" id="lff-8i-xKi">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="1uv-ye-Vcy">
+                            <connections>
+                                <action selector="addToDoItem:" destination="emt-iy-cBB" id="TUA-Hp-XJL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x6m-ij-Cu4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1923.1884057971015" y="132.58928571428572"/>
         </scene>
-        <!--View Controller-->
+        <!--To Do Details View Controller-->
         <scene sceneID="awT-ep-cOS">
             <objects>
-                <viewController id="Dz7-Bk-lfY" sceneMemberID="viewController">
+                <viewController id="Dz7-Bk-lfY" customClass="ToDoDetailsViewController" customModule="RedaMehali_MAPD714_Assignment04" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WKK-ma-1Vg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,12 +143,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kjy-yb-3qx">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kjy-yb-3qx">
                                 <rect key="frame" x="136" y="212" width="258" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.74469316009999997" green="0.0" blue="0.61764405980000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wFX-bG-ed1">
                                 <rect key="frame" x="136" y="164" width="258" height="34"/>
@@ -175,16 +186,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="square.and.pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7jp-ZN-gNM">
-                                <rect key="frame" x="20" y="828" width="32" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npA-LU-fQF">
+                                <rect key="frame" x="20" y="830" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                            </imageView>
+                                <state key="normal" image="square.and.pencil" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateToDoItem:" destination="Dz7-Bk-lfY" eventType="touchUpInside" id="siC-4k-cBN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="47F-zO-mut"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="K6l-Rz-3sN"/>
+                    <connections>
+                        <outlet property="hasDueDate" destination="xng-hv-bwU" id="TKI-1q-vEl"/>
+                        <outlet property="isCompleted" destination="iCG-qH-Bqz" id="voc-eF-0UE"/>
+                        <outlet property="name" destination="wFX-bG-ed1" id="8xi-fj-gVi"/>
+                        <outlet property="todoDesc" destination="kjy-yb-3qx" id="wtN-8E-Spe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xYN-sm-TaE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

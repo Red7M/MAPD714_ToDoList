@@ -9,18 +9,18 @@ import UIKit
 
 class Todos {
     
-    var title: String
-    var dueDate: String
-    var state: Bool
+    var name: String
+    var dueText: String
+    var isCompleted: Bool
     
-    init?(title: String, dueDate: String, state: Bool) {
+    init?(name: String, dueText: String, isCompleted: Bool) {
         // Initialization should fail if there is no title or dueDate.
-        if title.isEmpty || dueDate.isEmpty {
-            return nil
-        }
+//        if title.isEmpty || dueDate.isEmpty {
+//            return nil
+//        }
         
-        self.title = title
-        self.dueDate = dueDate
-        self.state = state
+        self.name = name
+        self.dueText = dueText
+        self.isCompleted = isCompleted
     }
 }

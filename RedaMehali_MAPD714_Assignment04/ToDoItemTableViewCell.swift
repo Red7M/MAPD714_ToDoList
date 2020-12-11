@@ -13,7 +13,7 @@ class ToDoItemTableViewCell: UITableViewCell {
     @IBOutlet weak var toDoItemTitleText: UITextView!
     @IBOutlet weak var toDoItemDueText: UITextView!
     @IBOutlet weak var toDoItemSwitchState: UISwitch!
-    @IBOutlet weak var toDoItemEditImageButton: UIButton!
+    @IBOutlet weak var todoEdit: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

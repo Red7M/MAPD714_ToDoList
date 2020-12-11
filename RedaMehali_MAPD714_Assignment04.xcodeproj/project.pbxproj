@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E212AA42582B71D00FB5234 /* ToDoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9E212AA22582B71D00FB5234 /* ToDoModel.xcdatamodeld */; };
 		9E6FBDD82575D18E00463A89 /* ToDoItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6FBDD72575D18E00463A89 /* ToDoItemTableViewController.swift */; };
 		9E6FBDE72575D59B00463A89 /* Todos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6FBDE62575D59B00463A89 /* Todos.swift */; };
 		9E9157C92572EE50005C6477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9157C82572EE50005C6477 /* AppDelegate.swift */; };
@@ -15,6 +16,7 @@
 		9E9157D22572EE51005C6477 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E9157D12572EE51005C6477 /* Assets.xcassets */; };
 		9E9157E02572EE52005C6477 /* RedaMehali_MAPD714_Assignment04Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9157DF2572EE52005C6477 /* RedaMehali_MAPD714_Assignment04Tests.swift */; };
 		9E9157EB2572EE52005C6477 /* RedaMehali_MAPD714_Assignment04UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9157EA2572EE52005C6477 /* RedaMehali_MAPD714_Assignment04UITests.swift */; };
+		9EC5D6142582F10E000238F6 /* ToDoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC5D6132582F10E000238F6 /* ToDoDetailsViewController.swift */; };
 		9EC692CB2574A3D50085CE4E /* ToDoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC692CA2574A3D50085CE4E /* ToDoItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E212AA32582B71D00FB5234 /* ToDoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoModel.xcdatamodel; sourceTree = "<group>"; };
 		9E6FBDD72575D18E00463A89 /* ToDoItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemTableViewController.swift; sourceTree = "<group>"; };
 		9E6FBDE62575D59B00463A89 /* Todos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todos.swift; sourceTree = "<group>"; };
 		9E9157C52572EE50005C6477 /* RedaMehali_MAPD714_Assignment04.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedaMehali_MAPD714_Assignment04.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +53,7 @@
 		9E9157E62572EE52005C6477 /* RedaMehali_MAPD714_Assignment04UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedaMehali_MAPD714_Assignment04UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E9157EA2572EE52005C6477 /* RedaMehali_MAPD714_Assignment04UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedaMehali_MAPD714_Assignment04UITests.swift; sourceTree = "<group>"; };
 		9E9157EC2572EE52005C6477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EC5D6132582F10E000238F6 /* ToDoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoDetailsViewController.swift; sourceTree = "<group>"; };
 		9EC692CA2574A3D50085CE4E /* ToDoItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,9 +110,11 @@
 				9EC692CA2574A3D50085CE4E /* ToDoItemTableViewCell.swift */,
 				9E9157CE2572EE50005C6477 /* Main.storyboard */,
 				9E6FBDD72575D18E00463A89 /* ToDoItemTableViewController.swift */,
+				9EC5D6132582F10E000238F6 /* ToDoDetailsViewController.swift */,
 				9E6FBDE62575D59B00463A89 /* Todos.swift */,
 				9E9157D12572EE51005C6477 /* Assets.xcassets */,
 				9E9157D62572EE51005C6477 /* Info.plist */,
+				9E212AA22582B71D00FB5234 /* ToDoModel.xcdatamodeld */,
 			);
 			path = RedaMehali_MAPD714_Assignment04;
 			sourceTree = "<group>";
@@ -261,10 +267,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E9157C92572EE50005C6477 /* AppDelegate.swift in Sources */,
+				9EC5D6142582F10E000238F6 /* ToDoDetailsViewController.swift in Sources */,
 				9E6FBDD82575D18E00463A89 /* ToDoItemTableViewController.swift in Sources */,
 				9EC692CB2574A3D50085CE4E /* ToDoItemTableViewCell.swift in Sources */,
 				9E9157CB2572EE50005C6477 /* SceneDelegate.swift in Sources */,
 				9E6FBDE72575D59B00463A89 /* Todos.swift in Sources */,
+				9E212AA42582B71D00FB5234 /* ToDoModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +591,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9E212AA22582B71D00FB5234 /* ToDoModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9E212AA32582B71D00FB5234 /* ToDoModel.xcdatamodel */,
+			);
+			currentVersion = 9E212AA32582B71D00FB5234 /* ToDoModel.xcdatamodel */;
+			path = ToDoModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9E9157BD2572EE50005C6477 /* Project object */;
 }
